@@ -1,6 +1,8 @@
+#!/usr/bin/env node
+
 tracklist = require("../lib/tracklist");
 
-tracklist(__dirname + "/../" + process.argv[2], function (err, results) {
+tracklist( process.argv[2] || "./" , function (err, results) {
   if (err) {
     console.log(err);
   } else {

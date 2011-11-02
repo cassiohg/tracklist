@@ -17,5 +17,9 @@
   },
   "dependencies": {
     "findit": "0.1.x"
-  }
+  },
+  "keywords": [
+    "id3",
+    "mp3"
+  ]
 }
