@@ -18,6 +18,9 @@
   "dependencies": {
     "findit": "0.1.x"
   },
+  "bundleDependencies": [
+    "id3"
+  ],
   "keywords": [
     "id3",
     "mp3"
