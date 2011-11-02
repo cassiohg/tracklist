@@ -41,7 +41,7 @@ You can also use it programmatically:
       // results is a list of tag objects
     });
 
-One property is attachec to the results that's not from a tag name: "filepath", or the path to the file.
+One property is attached to the results that's not from a tag name: "filepath", or the path to the file.
 
 ## License:
 
