@@ -1,0 +1,11 @@
+{
+  "author": "Joshua Holbrook",
+  "name": "podcasts.nikzografos.com",
+  "version": "0.0.0",
+  "engines": {
+    "node": "*"
+  },
+  "dependencies": {
+    "findit": "0.1.x"
+  }
+}
