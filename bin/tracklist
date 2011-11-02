@@ -1,0 +1,11 @@
+tracklist = require("../lib/tracklist");
+
+tracklist(__dirname + "/../" + process.argv[2], function (err, results) {
+  if (err) {
+    console.log(err);
+  } else {
+    results.sort().forEach(function (t) {
+      console.log((t.artist || "???") + " - " + (t.title || "???"));
+    });
+  }
+});

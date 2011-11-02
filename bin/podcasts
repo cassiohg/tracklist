@@ -1,5 +1,0 @@
-#!/usr/bin/env node
-
-podcasts = require("../lib/podcasts");
-
-podcasts(__dirname + "/../test");
