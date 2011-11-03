@@ -2,7 +2,7 @@
   "author": "Joshua Holbrook <josh@nodejitsu.com> (http://jesusabdullah.github.com)",
   "name": "tracklist",
   "description": "Eat folder of mp3s, receive id3 track info",
-  "version": "0.0.0",
+  "version": "0.0.0-1",
   "homepage": "https://github.com/jesusabdullah/tracklist",
   "repository": {
     "type": "git",
