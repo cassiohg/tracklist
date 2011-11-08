@@ -1,13 +1,14 @@
 #!/usr/bin/env node
 
-tracklist = require("../lib/tracklist");
+var tracklist = require("../lib/tracklist"),
+    path = require("path"),
+    colors = require("colors");
 
-tracklist( process.argv[2] || "./" , function (err, results) {
-  if (err) {
-    console.log(err);
-  } else {
-    results.sort().forEach(function (t) {
-      console.log((t.artist || "???") + " - " + (t.title || "???"));
-    });
-  }
+var tracks = tracklist.sync(path.resolve(process.argv[2] || "."));
+
+Object.keys(tracks).forEach(function (p) {
+
+  var tags = tracks[p];
+
+  console.log(tags.artist.yellow+": ".grey + tags.title.cyan + " // "+p.magenta);
 });
