@@ -6,15 +6,11 @@ Reads the id3 data for all mp3s in a folder.
 
     #!/usr/bin/env node
 
-    tracklist = require("../lib/tracklist");
+    var tracklist = require("tracklist");
 
-    tracklist(process.argv[2] || ".", function (err, results) {
-      if (err) {
-        console.log(err);
-      } else {
-        results.sort().forEach(function (t) {
-          console.log((t.artist || "???") + " - " + (t.title || "???"));
-        });
+    tracklist.list(process.argv[2] || ".", function (err, result) {
+      if (result) {
+          console.log((result.artist || "???") + " - " + (result.title || "???"));
       }
     });
 
@@ -37,8 +33,8 @@ You can also use it programmatically:
 
     tracklist = require("tracklist");
 
-    tracklist("path/to/jams", function (err, results) {
-      // results is a list of tag objects
+    tracklist.list("path/to/jams", function (err, result) {
+      // result for each file in the path
     });
 
 One property is attached to the results that's not from a tag name: "filepath", or the path to the file.

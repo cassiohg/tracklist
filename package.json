@@ -18,7 +18,9 @@
   "dependencies": {
     "findit": "0.1.x",
     "alists": "*",
-    "colors": "*"
+    "colors": "*",
+    "zippy": "*",
+    "hashish": "*"
   },
   "bundleDependencies": [
     "id3"
