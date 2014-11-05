@@ -1,5 +1,7 @@
 # Tracklist
 
+# NO I DONT MAINTAIN THIS
+
 Reads the id3 data for all mp3s in a folder.
 
 ## Example:
