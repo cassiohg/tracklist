@@ -1,6 +1,6 @@
 # Tracklist
 
-Reads the id3 data for all mp3s in a folder.
+Reads the id3 data for all mp3s in a folder and all subfolders.
 
 ## Example:
 
@@ -33,11 +33,17 @@ You can also use it programmatically:
 
     tracklist = require("tracklist");
 
-    tracklist.list("path/to/jams", function (err, result) {
-      // result for each file in the path
-    });
-
-One property is attached to the results that's not from a tag name: "filepath", or the path to the file.
+    var tracks = [];
+    tracklist.list("path/to/jams")
+        .on('file', function (err, mp3Tag) {
+        // mp3Tag is an object holding the id3 tags for each mp3 file in the path.
+        tracks.push(mp3Tag);
+        // One property is attached to the mp3Tag that's not from a tag name: "filepath", or the path to the file.
+    })
+        .on('end', function (err) {
+        // called after all files have been found.
+        console.log(tracks);
+    })
 
 ## License:
 
