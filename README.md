@@ -33,19 +33,30 @@ Reads the id3 data for all mp3s in a folder and all subfolders.
 
 You can also use it programmatically:
 
+asynchronous way
+
     tracklist = require("tracklist");
 
-    var tracks = [];
+    var tracks = {};
     tracklist.list("path/to/jams")
-        .on('file', function (err, mp3Tag) {
-        // mp3Tag is an object holding the id3 tags for each mp3 file in the path.
-        tracks.push(mp3Tag);
-        // One property is attached to the mp3Tag that's not from a tag name: "filepath", or the path to the file.
+    .on('file', function (filePath, tags) {
+        // for each mp3 file found, 'tags' is an object holding the id3 tags.
+        // 'filePath' is the path to the found file.
+        tracks[filePath] = tags;
     })
-        .on('end', function (err) {
+    .on('end', function (err) {
         // called after all files have been found.
         console.log(tracks);
-    })
+    });
+
+synchronous way
+
+    tracklist = require("tracklist");
+
+    console.log(tracklist.sync("path/to/jams"));
+    // returns an object with pairs filePath-tags like this:
+    // {{filePath: tags}, {filePath: tags}, {filePath: tags}}
+
 
 ## License:
 
